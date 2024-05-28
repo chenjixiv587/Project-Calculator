@@ -1,0 +1,87 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.calculator {
+    height: 100vh;
+    overflow: hidden;
+    background-color: #003285;
+}
+
+.container {
+    width: 960px;
+    margin: 55px auto;
+    background-color: #FF7F3E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px rgb(241, 248, 43);
+}
+
+.content {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px #D2649A;
+    border: 10px solid #240750;
+}
+
+.content .display {
+    width: 100%;
+    background-color: #1679AB;
+    font-size: 5.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    box-shadow: 2px 2px 2px #94FFD8;
+}
+
+.content .columns {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.row div {
+    background-color: #5AB2FF;
+    border-radius: 4px;
+    flex: 1;
+    height: 100px;
+    margin: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 3em;
+    cursor: pointer;
+}
+
+.content .row .operand {
+    background-color: #EE4E4E;
+}
+
+.content .row .operator {
+    background-color: #006769;
+}
+
+.content .row .operand.twoColumn {
+    flex: 2;
+}
