@@ -27,18 +27,34 @@ const clear = document.querySelector("#clear");
 const percent = document.querySelector("#percent");
 const posOrNeg = document.querySelector("#posOrNeg");
 const backSpace = document.querySelector("#back");
-let flag = true;
+window.addEventListener("keydown", e => {
+    if (operator) {
+        if (secondCount === 0) {
+            flag = true;
+            secondCount++;
+        }
+        operandTwo = getNum(e, true);
 
+    } else {
+        operandOne = getNum(e, true);
+    }
+});
+
+let flag = true;
 let secondCount = 0;
-const getNum = (e) => {
+const getNum = (e, isKeyDown) => {
     let currentOperand = 0;
     if (flag) display.textContent = "";
     flag = false;
-
-    display.textContent += e.target.textContent;
+    if (!isKeyDown) {
+        display.textContent += e.target.textContent;
+    } else {
+        display.textContent += e.code.slice(-1);
+    }
     currentOperand = +display.textContent;
     return currentOperand;
 };
+
 const getOperator = e => {
     operator = e.target.textContent;
 };
@@ -54,10 +70,10 @@ const getOperator = e => {
             flag = true;
             secondCount++;
         }
-        operandTwo = getNum(e);
+        operandTwo = getNum(e, false);
 
     } else {
-        operandOne = getNum(e);
+        operandOne = getNum(e, false);
     }
 }));
 
