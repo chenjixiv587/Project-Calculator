@@ -12,12 +12,12 @@
     <div class="calculator">
         <div class="container">
             <div class="content">
-                <div class="display">9988</div>
+                <div class="display">0</div>
                 <div class="columns">
                     <div class="row">
-                        <div>AC</div>
-                        <div>+/-</div>
-                        <div>%</div>
+                        <div id="clear">AC</div>
+                        <div id="posOrNeg">+/-</div>
+                        <div id="percent">%</div>
                         <div class="operator">/</div>
                     </div>
                     <div class="row">
@@ -41,12 +41,16 @@
                     <div class="row">
                         <div class="operand twoColumn">0</div>
                         <div class="operand">.</div>
-                        <div class="operator">=</div>
+                        <div id="equal">=</div>
+                    </div>
+                    <div class="row">
+                        <div id="back">BackSpace</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script src="./main.js"></script>
 </body>
 
 </html>
